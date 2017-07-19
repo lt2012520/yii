@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'defaultRoute'=>'brand/index',
+    'language'=>'zh-CN',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
@@ -38,7 +39,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-     
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
