@@ -24,7 +24,7 @@ class ArticleCategory extends ActiveRecord{
     public function attributeLabels()
     {
         return[
-            'name'=>'商品名称',
+            'name'=>'文章分类名称',
             'intro'=>'简介',
             'sort'=>'排序',
             'status'=>'状态',

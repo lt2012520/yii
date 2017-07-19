@@ -8,8 +8,8 @@ use yii\web\Request;
 
 class ArticleCategoryController extends Controller{
     public function actionIndex(){
-        $rs=ArticleCategory::find();
-        $total=$rs->where('status>=0')->count();
+        $rs=ArticleCategory::find()->where('status>=0')->orderBy('sort desc');
+        $total=$rs->count();
         $pagesize=3;
         $pager=new Pagination(['defaultPageSize'=>$pagesize,'totalCount'=>$total]);
         $models=$rs->limit($pager->limit)->offset($pager->offset)->all();
@@ -51,7 +51,7 @@ class ArticleCategoryController extends Controller{
         return $this->redirect('index');
     }
     public function actionRmfile(){
-        $rs=ArticleCategory::find()->where('status<0');
+        $rs=ArticleCategory::find()->where('status<0')->orderBy('sort desc');
         $total=$rs->count();
         $pagesize=3;
         $pager=new Pagination(['defaultPageSize'=>$pagesize,'totalCount'=>$total]);

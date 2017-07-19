@@ -1,5 +1,5 @@
 <a href="<?php echo \yii\helpers\Url::to(['article-category/add'])?>"class="btn btn-warning">添加</a>
-<a href="<?=\yii\helpers\Url::to(['article-category/rmfile'])?>" class="btn btn-danger">已删除商品</a>
+<a href="<?=\yii\helpers\Url::to(['article-category/rmfile'])?>" class="btn btn-danger">已删除文章分类</a>
 <table class="table table-bordered table-condensed">
     <tr>
         <td>商品名称</td>

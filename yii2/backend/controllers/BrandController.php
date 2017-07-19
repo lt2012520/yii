@@ -9,8 +9,8 @@ use yii\web\UploadedFile;
 
 class BrandController extends Controller{
     public function actionIndex(){
-        $rs=Brand::find();
-        $total=$rs->where('status>=0')->count();
+        $rs=Brand::find()->where('status>=0')->orderBy('sort desc');
+        $total=$rs->count();
         $pagesize=3;
         $pager=new Pagination(['defaultPageSize'=>$pagesize,'totalCount'=>$total]);
         $models=$rs->limit($pager->limit)->offset($pager->offset)->all();
@@ -72,7 +72,7 @@ class BrandController extends Controller{
         return $this->redirect('index');
     }
     public function actionRmfile(){
-        $rs=Brand::find()->where('status<0');
+        $rs=Brand::find()->where('status<0')->orderBy('sort desc');
         $total=$rs->count();
         $pagesize=3;
         $pager=new Pagination(['defaultPageSize'=>$pagesize,'totalCount'=>$total]);
