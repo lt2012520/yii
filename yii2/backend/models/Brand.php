@@ -20,7 +20,7 @@ class Brand extends ActiveRecord{
     {
         return[
             [['name','intro','sort','status'],'required'],
-            ['imgFile','file','extensions'=>['jpg','gif','png']]
+            ['logo','string','max'=>255]
         ];
     }
    public function attributeLabels()
@@ -30,7 +30,7 @@ class Brand extends ActiveRecord{
            'intro'=>'简介',
            'sort'=>'排序',
            'status'=>'状态',
-           'imgFile'=>'图片',
+           'logo'=>'图片',
        ];
    }
 
